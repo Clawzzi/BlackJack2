@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-class Card {
-  constructor(name, value, img) {
-    this.name = name;
-    this, value = value;
-    this.img = img;
-  }
-
-show() {
-  console.log(`This is a ${this.name} card`);
-}
-}
-
-export default Card;
-=======
 const SUIT = {
   HEARTS: "HEARTS",
   DIAMONDS: "DIAMONDS",
@@ -58,4 +43,3 @@ class Card {
 }
 
 export default Card;
->>>>>>> f5deb57 (draft)

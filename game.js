@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-=======
-import Player  from "./player.js"; 
 import Deck from "./deck.js";
+import Player from "./player.js";
+import Card from "./card.js";
 
->>>>>>> f5deb57 (draft)
 class Game {
   constructor(name) {
     this.name = name;
@@ -12,62 +10,37 @@ class Game {
     console.log("Game constructor " + this.name);
     this.id = "game_" + this.name.replace(" ", "_");
     this.container = this.createContainer();
-<<<<<<< HEAD
-
-    this.addListeners();
-=======
     this.addListeners();
     this.isFinished = false;
     this.resultContainer = this.createResultContainer();
 
     this.deck = new Deck("cards54.json");
-    this.dealer= new Player("Dealer", this.container);
-    this.player= new Player("Player", this.container);
-
->>>>>>> f5deb57 (draft)
+    this.dealer = new Player("Dealer", this.container);
+    this.player = new Player("Player", this.container);
   }
 
   createContainer() {
     const container = document.createElement("div");
     container.id = this.id;
-<<<<<<< HEAD
-    container.className = "game";
-    container.innerHTML = `<h1>${this.name}</h1>
-    <button id="deal_${this.id}">Deal</button>
-    <button id="hit_${this.id}">Hit</button>
-    <button id="stand_${this.id}">Stand</button>
-    <div id="players_${this.id}">players area</div>
-    <div id="result_${this.id}">result area</div>
-    `;
-    document.body.appendChild(container);
-    return container;
-  }
-
-
-  addListeners() {
-    const dealButton = document.getElementById("deal_"+this.id);
-    dealButton.addEventListener("click", this.deal.bind(this));
-=======
-    container.style.backgroundColor = "lightblue"; 
-    container.style.borderRadius = "15px"; 
+    container.style.backgroundColor = "lightblue";
+    container.style.borderRadius = "15px";
     container.className = "game";
     container.innerHTML = `<h1>${this.name}</h1>
     <button id="hit_${this.id}">Hit</button>
     <button id="stand_${this.id}">Stand</button>  
-    `; 
+    `;
 
-    const  dealButton= document.createElement("button");
+    const dealButton = document.createElement("button");
     dealButton.id = `deal_${this.id}`;
     dealButton.innerText = "Deal";
     dealButton.style.color = "black";
-    dealButton.style.background ="pink"
+    dealButton.style.background = "pink";
 
-  
     container.appendChild(dealButton);
     document.body.appendChild(container);
     return container;
   }
-  
+
   createResultContainer() {
     const resultContainer = document.createElement("div");
     resultContainer.id = "result_" + this.id;
@@ -79,8 +52,6 @@ class Game {
     const dealButton = document.getElementById("deal_" + this.id);
     dealButton.addEventListener("click", this.deal.bind(this));
 
-    
->>>>>>> f5deb57 (draft)
     const hitButton = document.getElementById("hit_" + this.id);
     hitButton.addEventListener("click", this.hit.bind(this));
     const standButton = document.getElementById("stand_" + this.id);
@@ -89,27 +60,10 @@ class Game {
 
   deal() {
     console.log("Deal");
-<<<<<<< HEAD
-  }
-
-  stand() {
-    console.log("Stand");
-  }
-
-  hit() {
-    console.log("Hit");
-  } 
-
-
-
-=======
     this.reset();
-
   }
 
-  
   stand() {
- 
     while (this.dealer.score < 17) {
       this.dealer.addCard(this.deck.drawCard());
     }
@@ -133,19 +87,19 @@ class Game {
     let message = "";
 
     switch (true) {
-      case (playerScore > 21):
+      case playerScore > 21:
         message = "Player busts";
         this.dealerWins++;
         break;
-      case (dealerScore > 21):
+      case dealerScore > 21:
         message = "Dealer busts";
         this.playersWins++;
         break;
-      case (playerScore > dealerScore):
+      case playerScore > dealerScore:
         message = "Player wins";
         this.playersWins++;
         break;
-      case (playerScore < dealerScore):
+      case playerScore < dealerScore:
         message = "Dealer wins";
         this.dealerWins++;
         break;
@@ -164,11 +118,10 @@ class Game {
     this.isFinished = false;
     this.resultContainer.innerHTML = "";
   }
-  
+
   showPleaseReset() {
     alert("Please reset the game");
   }
->>>>>>> f5deb57 (draft)
 }
 
 export default Game;
