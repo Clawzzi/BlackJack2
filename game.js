@@ -22,7 +22,7 @@ class Game {
   createContainer() {
     const container = document.createElement("div");
     container.id = this.id;
-    container.style.backgroundColor = "lightblue";
+    container.style.backgroundColor = "lightgray";
     container.style.borderRadius = "15px";
     container.className = "game";
     container.innerHTML = `<h1>${this.name}</h1>
@@ -34,7 +34,7 @@ class Game {
     dealButton.id = `deal_${this.id}`;
     dealButton.innerText = "Deal";
     dealButton.style.color = "black";
-    dealButton.style.background = "pink";
+    dealButton.style.background = "lightblue";
 
     container.appendChild(dealButton);
     document.body.appendChild(container);
