@@ -21,6 +21,7 @@ class Player {
     handContainer.style.display = "flex";
     handContainer.style.flexDirection = "row";
     handContainer.style.margin = "10px";
+    handContainer.style.backgroundColor = "#f0f0f0"; 
     handContainer.id = this.id;
     const userScore = this.createUserScoreElement();
     handContainer.appendChild(userScore);
